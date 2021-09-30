@@ -3,26 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from "@angular/common/http";
-import { ArticleComponent } from './components/article/article.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { ConnexionComponent } from './pages/connexion/connexion.component';
-import { ArticlesComponent } from './pages/articles/articles.component';
-import { CreateArticleComponent } from './pages/create-article/create-article.component';
+import { AuthService } from './core/services/auth.service';
+import { AuthInterceptor } from './core/interceptors/auth.interceptor';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleComponent,
     ConnexionComponent,
-    ArticlesComponent,
-    CreateArticleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

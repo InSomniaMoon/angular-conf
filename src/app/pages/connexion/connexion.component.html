@@ -1,1 +1,9 @@
-<p>connexion works!</p>
+<div class="col-6 mx-auto">
+  <form (ngSubmit)="loginSubmit(loginForm)" #loginForm="ngForm">
+    <div class="my-5">
+      <label for="loginTokenId" class="form-label">Mot de passe : </label>
+      <input type="text" id="loginTokenId" class="form-control" ngModel name="loginToken" />
+      <button class="btn btn-primary" type="submit">Connecter</button>
+    </div>
+  </form>
+</div>
