@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Article } from 'src/app/core/models/article';
 
 @Component({
-  selector: 'app-fragment-article',
+  selector: 'app-article-fragment',
   templateUrl: './article-fragment.component.html',
   styleUrls: ['./article-fragment.component.css']
 })
