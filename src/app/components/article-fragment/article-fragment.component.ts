@@ -8,7 +8,7 @@ import { Article } from 'src/app/core/models/article';
 })
 export class ArticleFragmentComponent implements OnInit {
 
-  @Input() article!: Article
+  @Input("article") article: Article = new Article();
 
   constructor() { }
 

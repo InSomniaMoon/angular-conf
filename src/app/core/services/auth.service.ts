@@ -11,7 +11,7 @@ import { environment } from 'src/environments/environment';
 export class AuthService {
   private url = environment.APIUrl;
 
-  private isAuthSubject = new BehaviorSubject<boolean>(true);
+  private isAuthSubject = new BehaviorSubject<boolean>(false);
 
 
   constructor(private http: HttpClient) { }

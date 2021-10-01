@@ -22,10 +22,6 @@ export class ArticlesService {
 
   public findArticleById(id: number) {
     return this.http.get(`${this.url}/articles/${id}`).pipe(
-      map((data: any) => {
-        console.log(data)
-        return data
-      }),
       map((data: any) => new Article(data.id, data.nom, data.type, data.description))
     )
 
